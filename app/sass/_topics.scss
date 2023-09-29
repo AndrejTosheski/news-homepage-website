@@ -1,0 +1,50 @@
+@use "./util" as u;
+
+.topics {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+
+  @include u.breakpoint-up(large) {
+    flex-direction: row;
+    gap: u.rem(42);
+  }
+
+  &__card {
+    display: flex;
+    gap: u.rem(24);
+    margin-bottom: u.rem(32);
+
+    &:hover {
+      h3 {
+        color: var(--softRed);
+      }
+    }
+
+    img {
+      width: u.rem(100);
+      height: u.rem(128);
+    }
+
+    &__text {
+      h2 {
+        color: var(--grayishBlue);
+        font-size: u.rem(28);
+        margin-bottom: u.rem(12);
+      }
+
+      h3 {
+        color: var(--veryDarkBlue);
+        font-size: u.rem(15);
+        margin-bottom: u.rem(12);
+        transition: all 150ms ease-in-out;
+      }
+
+      p {
+        color: var(--darkGrayishBlue);
+        line-height: 1.6;
+        font-size: u.rem(12);
+      }
+    }
+  }
+}

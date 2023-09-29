@@ -1,0 +1,114 @@
+@use "./util" as u;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+
+  @include u.breakpoint-up(large) {
+    flex-direction: row;
+    gap: u.rem(30);
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+
+      @include u.breakpoint-up(large) {
+        flex-direction: row;
+      }
+    }
+
+    &__image {
+      min-height: u.rem(300);
+      max-width: u.rem(850);
+      background-image: url("../../assets/images/image-web-3-mobile.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: u.rem(26);
+
+      @include u.breakpoint-up(large) {
+        background-image: url("../../assets/images/image-web-3-desktop.jpg");
+      }
+    }
+
+    h1 {
+      font-size: u.rem(42);
+      font-weight: 800;
+      color: var(--veryDarkBlue);
+
+      @include u.breakpoint-up(large) {
+        font-size: u.rem(50);
+        flex: 3;
+      }
+    }
+
+    &__readmore {
+      color: var(--darkGrayishBlue);
+
+      @include u.breakpoint-up(large) {
+        margin-left: u.rem(90);
+        margin-right: u.rem(150);
+        flex: 2;
+      }
+
+      p {
+        margin-top: u.rem(26);
+        margin-bottom: u.rem(30);
+
+        @include u.breakpoint-up(large) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  &__aside {
+    background-color: var(--veryDarkBlue);
+    color: var(--offWhite);
+    padding: u.rem(29) u.rem(21);
+
+    @include u.breakpoint-up(large) {
+      min-width: u.rem(350);
+    }
+
+    h2 {
+      color: var(--softOrange);
+      font-size: u.rem(26);
+      margin-bottom: u.rem(40);
+
+      @include u.breakpoint-up(large) {
+        font-size: u.rem(36);
+      }
+    }
+
+    &__new {
+      h3 {
+        font-size: u.rem(18);
+        margin-bottom: u.rem(16);
+      }
+
+      p {
+        color: var(--grayishBlue);
+        margin-bottom: u.rem(32);
+      }
+
+      .no-margin {
+        margin-bottom: 0;
+      }
+
+      span {
+        display: inline-block;
+        background-color: var(--grayishBlue);
+        width: 100%;
+        height: 1px;
+        margin-bottom: u.rem(32);
+      }
+    }
+  }
+}

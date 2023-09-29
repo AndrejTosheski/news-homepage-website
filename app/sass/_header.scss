@@ -7,6 +7,14 @@
   align-items: center;
   justify-content: space-between;
 
+  a {
+    transition: all 150ms ease-in-out;
+  }
+
+  a:hover {
+    color: var(--softRed);
+  }
+
   .overlay {
     opacity: 0;
     position: fixed;
